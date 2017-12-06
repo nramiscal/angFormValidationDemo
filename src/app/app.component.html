@@ -1,0 +1,96 @@
+<!-- <form (submit)="onSubmit()">
+    Username:
+    <input
+    id='username'
+    type="text"
+    name="username"
+    minlength='3'
+    maxlength='8'
+    [(ngModel)]="user.username"
+    #username="ngModel"
+    required
+    ><br>
+    <div *ngIf="username.invalid">
+        <p>Username must be at least 2 characters</p>
+    </div>
+
+    Password:
+    <input
+    id='password'
+    type="text"
+    name="password"
+    minlength='8'
+    maxlength='20'
+    [(ngModel)]="user.password"
+    #password="ngModel"
+    required
+    ><br>
+    <div *ngIf="password.invalid">
+        <p>Password must be at least 8 characters</p>
+    </div>
+    {{user | json}}
+    <input type="submit" name="" value="Submit">
+</form> -->
+
+<form #form="ngForm"(submit)="onSubmit()">
+  Email:
+  <input
+    type="text"
+    name="email"
+    required
+    minlength="4"
+    maxlength="24"
+    [(ngModel)]="user.email"
+    #email='ngModel'
+  />
+  <div *ngIf="email.invalid">
+      <p>Email must be at least 4 characters.</p>
+  </div><br>
+
+  First Name:
+  <input
+    type="text"
+    name="first_name"
+    required
+    minlength="4"
+    maxlength="24"
+    [(ngModel)]="user.first_name"
+    #first_name='ngModel'
+  />
+  <div *ngIf="first_name.invalid">
+      <p>First name must be at least 4 characters.</p>
+  </div><br>
+  Last Name:
+  <input
+    type="text"
+    name="last_name"
+    required
+    minlength="4"
+    maxlength="24"
+    [(ngModel)]="user.last_name"
+    #last_name='ngModel'
+  />
+  <div *ngIf="last_name.invalid">
+      <p>Last name must be at least 4 characters.</p>
+  </div><br>
+  Password:
+  <input
+    type="text"
+    name="password"
+    required
+    minlength="10"
+    maxlength="24"
+    pattern="^([a-zA-Z0-9@*#]{8,15})$"
+    [(ngModel)]="user.password"
+    #password='ngModel'
+  />
+  <div *ngIf="password.invalid">
+        <p>Password must be at least 10 characters.</p>
+  </div><br>
+  {{ user | json }}
+  <br>
+  <input type="submit"><br>
+
+</form>
+
+{{form | json}}
